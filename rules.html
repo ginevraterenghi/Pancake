@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Pancake [sth] vtr</title>
+
+	<!-- fav icon link -->
+	<link rel="shortcut icon" type="image/png" href="assets/fav.png" />
+
+	<!-- fonts link -->
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+	<!-- Your CSS -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+
+<body>
+
+	<container>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-7 spazioSinistra">
+
+					<div class="etichetta">
+						<div class="name"> pancake </div>
+						<div class="row">
+							<div class="subname"> [sth] vtr </div>
+							<!--link to came back to tool page-->
+							<a href="index.html" class="rules">/tool</a>
+						</div>
+					</div>
+					<div class="etichetta">
+						<div class="domanda"> Why "Pancake"?</div>
+						<div class="risposta">Do not think of pancake like a delicious dessert. <br>Pancake is also a verb.<br>
+							<div class="green">To pancake means to flatten something.</div> This tool wants to pancake dimensions from many to one to make clearer and easier reading the distance between word embeddings.
+						</div>
+					</div>
+
+					<div class="etichetta">
+						<div class="domanda"> Models:</div>
+						<div class="risposta">
+							<span class="green">Word Embedding</span><br> learns how to represent words in a 300 dimensional vector space to encode semantic similarity.
+						</div>
+						<div class="risposta">
+							<span class="green">Logistic Regression Classifier</span><br>classifier that uses word embeddings as input to accomplish the classification purposes.
+						</div>
+					</div>
+
+					<div class="etichetta">
+						<div class="domanda"> Structural components:</div>
+						<div class="risposta">
+							<span class="green"> [Key-words] </span> &nbsp; first ten words ordered by descending influency<br> On the left side, the user can find a list of the ten most influential words for the binomial classification task, according to the logistic regression classifier. The font size is directly proportional to this value: the higher the value, the higher the font size.
+							<br> The purpose of this list is to highlight to the user which are the words that mostly affect the correctness of the classification, so he/she would know in which regions of the plot to point his/her attention.
+							<br>At the bottom of the list, a search bar is present, in order to look for a specific word that is not part of the most influential ones.<br><i>For example, the word 'Dove' should have a high influency value if we are classifying posts to determine if a piece of text is talking about the brand Dove or not.</i>
+						</div>
+						<div class="risposta">
+							<span class="green"> [word-list] </span> &nbsp;list of all words that have a corresponding word embedding<br>A list of all the words for which word embeddings have been trained is presented on the right. The words are ordered alphabetically to make easier searching for a specific word. By hovering on the word in the list, the user can see the corresponding dot highlighted in the plot.<br><i>For example, if you are looking for the position of a problematic word, you can find it easily in the list and see its position on the scatterplot in relation with other words.</i>
+						</div>
+						<div class="risposta">
+							<span class="green"> Slider bar </span> &nbsp; /selection setter <br>A slider bar appears on the left each time a key-word is selected.<br>The slider represents a selector through which it is possible to enlarge o restrict the circle along the selected word, or move along the line plot at the bottom. <br>Starting from 1, that corresponds to the word selected itself, the value decreases all the way to 0.
+						</div>
+						<div class="risposta">
+							<span class="green"> Scatter plot </span> &nbsp; Data-visualization #1 <br> The scatter plot is the first visualisation the user finds during his/her data exploration. Words are positioned on the x and y axes according to the transformation coming from TSNE (model used to reduce the dimensionality of the embeddings). A circle selector is drawn depending on the position of the handle on the slider, which was previously introduced. The slider allows the user to focus only on the words within the circle boundaries.<br><b> Limit:&nbsp;Visualisation space can not reproduce all the embeddings dimensions</b>
+						</div>
+						<div class="risposta">
+							<span class="green"> Line plot </span> &nbsp; Data-visualization #2 <br>Here, words are plotted only on one axis. Starting from the selected word, assumed to be at similarity value equal to 1, all the other words are shown on the line plot, positioned according to their cosine similarity with respect to the selected keyword. Each similarity is computed in the non-reduced 300 dimensions, which implies that no approximation is taking place. The color of the rectangles which represent the words have been coloured with the same gradient that was used for the scatterplot, even if in this case it does not assume a particular meaning, rather than show the equivalence of the data point both in the scatterplot and in the line plot.
+							<br><b> Solution:&nbsp;Turn the analysis to the relationship between words in their actual dimensionality using their pair-wise cosine similarity</b>
+						</div>
+					</div>
+
+					<div class="etichetta">
+						<div class="domanda"> Visual Components:</div>
+						<div class="risposta">
+							<span class="blue"> Blue </span> &nbsp;color gradient<br>What we see in 2 dimensions might not be true in 300 dimensions. Blue color gradient is used to bypass this problem. The color is defined by this function:<br>What we see in 2 dimensions might not be true in 300 dimensions.<br>Blue color gradient is used to bypass this problem. The color is defined by this function:
+							<div class="row">
+								<div class="col-2 formula1"> <i>color_i = delta_i = </i></div>
+								<div class="col-8 formula2"><i> |cosine_similarity(selected word in 300 dimensions, word_i in 300 dimensions) - cosine_similarity(selected word in 2 dimensions, word_i in 2 dimensions)|
+								</i></div>
+							</div><br>This means that if the dot color is dark, it’s delta value is small, which means that what the user is seeing in 2 dimensions is also happening in 300 dimensions. If the dot color is lighter, it’s delta value is large, which means that what the user is seeing in 2 dimensions is only true in 2 dimensions, thanks to the dimensionality reduction, so the user should be warned not to jump to conclusion too fast with that specific data point.
+						</div>
+						<div class="risposta">
+							<span class="pink"> Pink </span> &nbsp;color gradient<br> The visualization problem of our model is that it works on a lot of dimension.<br>The visualization problem of our model is that it works on a lot of dimensions. So, we decided to use the scatter plot to allow the user to interact with the data and make him conscious about the entire model results. But it wasn’t enough to go deeper in the analysis. We decided to flatten all dimensions to one, calculating the similarity between words by means of the cosine similarity in their actual dimensionality.<br>The tick values on the line plot are shown according to the slider. One, on the left, means high similarity score, that corresponds with the word that was selected. Starting from that, the similarity value becomes smaller. The further the word is plotted, the more different is the word from the selected one. Pink is the color assigned to the similarity value. The plot line is colored with a pink gradient to help the user understand immediately the similarity score he/she is setting. Dark pink corresponds to the maximum level of similarity.
+						</div>
+
+					</div>
+
+					<div class="etichetta">
+						&nbsp;
+					</div>
+
+				</div>
+
+
+				<div class="col-5 spazioDestra">
+					<div class="etichettaDestra">
+						How to use it:
+						<div class="col-7 rispostaDestra">
+
+							<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 438.03 400.32" width="330">
+  <defs>
+  </defs>
+  <g>
+    <rect class="cls-1" x="1.53" y="42.13" width="374" height="85"/>
+    <path d="M804,358v84H431V358H804m1-1H430v86H805V357Z" transform="translate(-428.97 -315.37)"/>
+  </g>
+  <g>
+    <rect class="cls-1" x="1.53" y="314.13" width="374" height="85"/>
+    <path d="M804,630v84H431V630H804m1-1H430v86H805V629Z" transform="translate(-428.97 -315.37)"/>
+  </g>
+  <text class="cls-2" transform="translate(0 12.17)">after you have trined your model:</text>
+  <text class="cls-3" transform="translate(24 76.17)">launch the script to organize your <tspan x="0" y="21.6">data in file readable from the tool</tspan></text>
+  <g>
+    <rect class="cls-1" x="1.53" y="190.13" width="374" height="59"/>
+    <path d="M804,506v58H431V506H804m1-1H430v60H805V505Z" transform="translate(-428.97 -315.37)"/>
+  </g>
+  <text class="cls-3" transform="translate(24 224.17)">put the file in the data folder</text>
+  <text class="cls-3" transform="translate(24 352.17)">save and run the code to see your<tspan x="0" y="21.6">model result</tspan></text>
+  <line class="cls-4" x1="191.53" y1="127.63" x2="191.53" y2="190.13"/>
+  <line class="cls-4" x1="191.53" y1="249.63" x2="191.53" y2="312.13"/>
+</svg>
+
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+		<footer id="footerGray">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-3 footerLeft">
+						<div class="col-12 course">
+							Capstone Course
+						</div>
+						<div class="col-12 spring">
+							Spring 2018
+						</div>
+					</div>
+
+					<div class="col-3 footerLeft">
+						<div class="col-12 course">
+							Team members:
+						</div>
+						<div class="col-12 spring">
+							Alessandro Bianchi<br>Andrea Porelli<br>Srivatsan Srinivasan <br>Ginevra Terenghi
+						</div>
+					</div>
+
+					<div class="col-6 footerLeft">
+						<div class="col-12 course">
+							&nbsp;
+						</div>
+						<div class="col-12 spring">
+							<img src="assets/logo-polimi.png" style="width:220px; height: auto" class="footer_img">
+							<img src="assets/logo-harvard.png" style="width:250px; height: auto" class="footer_img">
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</footer>
+
+
+	</container>
+
+</body>
+
+</html>

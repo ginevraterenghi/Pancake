@@ -1,0 +1,672 @@
+/*! ------------------------------------------ MAIN SPACE --------------------------------------------- */
+
+#up {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+
+#middle {
+	margin-top: 50px;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+#bottom {
+	margin-top: 1%;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+/*! ------------- HEADER-box -------------- */
+
+.box1 {
+	margin-top: 20px;
+	background: white;
+	border-top: px solid black;
+}
+
+.box2 {
+	border-left: 1px solid black;
+	height: 76px;
+	background: white;
+	border-top: 1px solid black;
+}
+
+
+/*! ------------------------------------------ HEADER-text --------------------------------------------- */
+
+@font-face {
+	font-family: ariah;
+	src: url(./assets/font/ariah.ttf);
+}
+
+.name {
+	margin-top: px;
+	font-size: 30pt;
+	font-family: 'ariah';
+	color: black;
+	text-align: left;
+}
+
+.subname {
+	font-size: 10pt;
+	font-family: 'Inconsolata', sans-serif;
+	color: black;
+	text-align: left;
+	margin-left: 15px;
+	margin-right: 1px;
+	background: white;
+}
+
+.rules {
+	/*intro text for list*/
+	height: 10px;
+	font-size: 10pt;
+	font-family: 'Inconsolata', sans-serif;
+	color: blue;
+	margin-left: 11px;
+	cursor: pointer;
+}
+
+a.rules:hover {
+	opacity: .3;
+	text-decoration: none;
+}
+
+.label {
+	margin-top: 15px;
+	font-size: 14pt;
+	font-family: 'IBM Plex Serif', serif;
+	color: black;
+	text-align: left;
+	background: white;
+}
+
+.subtitle {
+	font-size: 10pt;
+	font-family: 'Inconsolata', sans-serif;
+	color: black;
+	text-align: left;
+	margin-left: 35px;
+	margin-right: 1px;
+	background: white;
+}
+
+
+/*! ------------------------------------------ division by CONTENTS --------------------------------------------- */
+
+.squareScatter {
+	height: 500px;
+	background-color: #f4f4f4;
+	padding: 0px;
+}
+
+.squareList {
+	height: 500px;
+}
+
+.squareKey {
+	height: 500px;
+}
+
+
+.squareRange {
+	height: 500px;
+}
+
+.squareLine {
+	height: 300px;
+}
+
+
+
+/*! ------------------------------------------ content(1): KEY-LIST+SLIDER --------------------------------------------- */
+
+/*! ---------- slider ----------- */
+
+.ticks {
+	/* Vslider value */
+	font-family: 'Inconsolata', sans-serif;
+	font-size: 10px;
+	fill: black;
+}
+
+.track,
+.track-inset,
+
+.track-inset {
+	/* slider line */
+	stroke: #ff008a;
+	stroke-width: 2px;
+	stroke-linecap: round;
+}
+
+.track-overlay {
+	/* slider event */
+	pointer-events: stroke;
+	stroke-width: 20px;
+	stroke: transparent;
+	cursor: ew-resize;
+}
+
+.handle {
+	/* slider dot */
+	fill: #ff008a;
+	stroke: none;
+}
+
+
+/*! ---------- key-list ----------- */
+
+.keyFrame {
+	/*list space*/
+	margin: 0px;
+	height: 470px;
+	background: white;
+
+}
+
+
+.keyList {
+	/*list word space*/
+	font-family: 'IBM Plex Serif', serif;
+	color: black;
+
+}
+
+.keyWord {
+	/*	list text*/
+	font-family: inherit;
+	color: inherit;
+	text-decoration: none;
+	opacity: 0.3;
+}
+
+a.keyWord:hover {
+	opacity: 1;
+}
+
+.selectedList {
+	/*keylist selected on click*/
+	font-family: 'IBM Plex Serif', serif;
+	color: black;
+}
+
+.containerSliderKeyword {
+	/* all slider container */
+	float: left;
+	clear: none;
+	width: 100%;
+	height: 43px;
+}
+
+.sliderLeft {
+	/* single slider container */
+	width: 100px;
+	margin: 0px;
+}
+
+.keywordRight {
+	/* single key-word container */
+	margin: 0;
+	padding-left: 30px;
+	padding-top: 0px;
+}
+
+.search {
+	/* search box */
+	margin: 0;
+	margin-left: 30px;
+	padding-top: 0px;
+	padding-top: 0px;
+}
+
+.svgSlider {
+	/* slider space */
+	width: 100px;
+	height: 25px;
+	padding: 0;
+	opacity: 0;
+	visibility: inherit;
+}
+
+.svgSlider * {
+	pointer-events: none;
+}
+
+.slider {
+	width: 70px;
+	height: 25px;
+	visibility: inherit;
+}
+
+.deselect {
+	/*	margin-left: 135px;*/
+	margin-top: 10px;
+	height: 20px;
+	width: 60px;
+	cursor: pointer;
+	font-size: 8pt;
+	font-family: 'Inconsolata', sans-serif;
+}
+
+
+/*! ------------------------------------------ content(2): SCATTER-PLOT--------------------------------------------- */
+
+.tooltip {
+	position: absolute;
+	width: 200px;
+	height: 28px;
+	pointer-events: none;
+	font-size: 8pt;
+	font-family: 'Inconsolata', sans-serif;
+	color: black;
+	text-align: left;
+}
+
+.activeDotWord {
+	/* !hover sulla word-list */
+	/* !important to override the inline styling */
+	fill: #29cea6 !important;
+	opacity: 1 !important;	
+}
+
+.selectedDot {
+	/* doct selected from key-word */
+	/* !important to override the inline styling */
+	fill: white !important;
+	stroke: #1c0e63 !important;
+	stroke-width: 2px !important;
+	opacity: 1 !important;
+}
+
+/*! -------------  scatter-plot grid ------------ */
+
+.lineaGrossa {
+	stroke: #474646;
+	opacity: 0.9;
+	stroke-width: 0.5px;
+	padding: 0px;
+	margin: 0px;
+}
+
+.lineaPiccola {
+	stroke: #474646;
+	opacity: .3;
+	stroke-width: 0.5px;
+	padding: 0px;
+	margin: 0px;
+}
+
+.lineaPiccola2 {
+	stroke: #474646;
+	opacity: .1;
+	stroke-width: 0.5px;
+	padding: 0px;
+	margin: 0px;
+}
+
+
+/*! ------------ circle selector ---------------- */
+
+.circleSelect {
+	fill: white;
+	opacity: 0.6;
+	stroke: #ff008a;
+	stroke-linecap: round;
+	stroke-width: 2px;
+	stroke-dasharray: 3, 5;
+}
+
+.dot {
+	fill: blue;
+
+}
+
+
+/*! ----------------  search bar ---------------- */
+
+input {
+	-webkit-appearance: textfield;
+	background-color: white;
+	-webkit-rtl-ordering: logical;
+	cursor: text;
+	margin-top: 12px;
+	padding: 1px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #cccaca;
+	font-family: 'IBM Plex Serif', serif;
+	font-size: 15px;
+	padding-left: 10px;
+	margin-left: -0px;
+}
+
+input:focus {
+	color:black;
+	outline: 0px;
+}
+
+
+/*! ------------------------------------------ content(3): WORD-LIST--------------------------------------------- */
+
+.preList {
+	/*pre-list text space*/
+	height: 15px;
+	/*	background: violet;*/
+}
+
+.spiegazione {
+	/*list text introduction*/
+	height: 10px;
+	font-size: 8pt;
+	font-family: 'Inconsolata', sans-serif;
+}
+
+.listFrame {
+	/*word-list space*/
+	margin-top: 14px;
+	height: 470px;
+	border-left: 1px solid #cccaca;
+	border-top: 1px solid #cccaca;
+	border-bottom: 1px solid #cccaca;
+}
+
+.wordList {
+	/* word list ul */
+	padding-left: 20px;
+	padding-top: 10px;
+	height: 468px;
+}
+
+.wordListElement {
+	/* word list single word */
+	font-family: 'Inconsolata', sans-serif;
+	color: #474646;
+	font-size: 10pt;
+	cursor: pointer;
+}
+
+a.wordListElement:hover {
+	color: #29cea6 !important;
+}
+
+
+/*! ------------ lists ----------------- */
+
+ul {
+	list-style-type: none;
+	padding-left: 0px;
+
+}
+
+nav ul {
+	overflow: hidden;
+	overflow-y: scroll;
+}
+
+
+/*! ------- scroll bar ------------- */
+
+::-webkit-scrollbar {
+	width: 1px;
+	stroke-linecap: round;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+	background: #29cea6;
+}
+
+::-webkit-scrollbar-track-piece {
+	background: #cccaca;
+}
+
+/*! ------------------------------------------ content(4): LINE-PLOT ------------------------------------------ */
+
+.axis text {
+	/*tick text*/
+	font-family: 'Inconsolata', sans-serif;
+	line-height: 20px;
+	font-size: 10px;
+	fill: black;
+}
+
+.axis path {
+	/*line*/
+	stroke-width: 8px;
+	stroke-linecap: round;
+	stroke: url(#line-gradient);
+}
+
+.axis line {
+	/*tick line*/
+	stroke-width: 1px;
+	height: 1px;
+	stroke: gray;
+	stroke-linecap: round;
+	stroke-dasharray: 1, 3;
+}
+
+.rectangles {
+	/*reclangles plotted on line*/
+	width: 5px;
+	height: 20px;
+	opacity: 1.0;
+	border-radius: 25px;
+	cursor: pointer;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+
+
+/*! ----------------  line plot spaces ---------------- */
+
+.scatterOrizzontale {
+	/*line plot svg space*/
+	height: 130px;
+}
+
+.riqLine {
+	/*print value space*/
+	margin-top: 15px;
+}
+
+.printWord {
+	/*word printed*/
+	width: 40%;
+	padding-left: 30px;
+	height: 100px;
+	font-size: 40pt;
+	font-family: 'IBM Plex Serif', serif;
+	color: blue;
+}
+
+.printSimilarity {
+	/*value printed*/
+	width: 10%;
+	padding-left: 30px;
+	height: 100px;
+	font-size: 40pt;
+	font-family: 'IBM Plex Serif', serif;
+	color: blue;
+}
+
+.textFix {
+	/*fixed text before word*/
+	width: 11%;
+	padding-left: 30px;
+	padding-top: 43px;
+	font-size: 8pt;
+	padding-left: 40px;
+	font-family: 'Inconsolata', sans-serif;
+	color: black;
+}
+
+.ulHidden {
+	visibility: hidden;
+}
+
+.liHidden {
+	visibility: hidden;
+}
+
+
+/*! ------------------------------------------  rules.html ------------------------------------------ */
+
+.spazioSinistra {
+}
+
+.spazioDestra {
+}
+
+.nomeFooter {
+	height: 30vh;
+}
+
+.etichetta {
+	background: white;
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-top: 20px;
+}
+
+.blue {
+	color: blue;
+}
+.green {
+	color: #29cea6;
+}
+.pink {
+	color: #ff008a;
+}
+
+.domanda {
+	/*intro for paragraph*/
+	height: 10px;
+	font-size: 10pt;
+	font-family: 'Inconsolata', sans-serif;
+}
+
+.risposta {
+	background: white;
+	margin-left: 70px;
+	margin-right: 15px;
+	margin-top: 20px;
+	font-size: 9pt;
+	font-family: 'IBM Plex Serif', serif;
+	line-height: 18px;
+}
+
+.elementFooter {
+	height: 50vh;
+}
+
+.blueFooter {
+}
+
+.pinkFooter {
+}
+
+.sliderFooter {
+	height: 20vh;
+}
+
+.rispostaSpeciale {
+	background: white;
+	margin-left: 0px;
+	margin-right: 15px;
+	margin-top: 10px;
+	font-size: 9pt;
+	font-family: 'IBM Plex Serif', serif;
+	line-height: 18px;
+}
+
+.formula1 {
+	margin-left: 40px;
+	margin-top: 15px;
+	font-size: 8pt;
+	font-family: 'IBM Plex Serif', serif;
+	line-height: 18px;
+}
+
+.formula2 {
+	padding-right: 0px;
+	padding-left: 0px;
+	margin-top: 15px;
+	font-size: 9pt;
+	font-family: 'IBM Plex Serif', serif;
+	line-height: 18px;
+}
+
+#footerGray {
+	background: darkgray;
+
+}
+
+.footerLeft {
+	margin-top: 10px;
+}
+.course {
+	margin-top: 10px;
+	font-size: 11pt;
+	font-family: 'IBM Plex Serif', serif;
+	line-height: 18px;
+}
+
+.spring {
+	margin-top: 5px;
+	font-size: 9pt;
+	font-family: 'Inconsolata', sans-serif;
+	line-height: 18px;
+	padding-bottom: 15px;
+}
+
+
+.etichettaDestra {
+	background: white;
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-top: 119px;
+	font-size: 10pt;
+	font-family: 'Inconsolata', sans-serif;
+}
+
+.rispostaDestra {
+	background: white;
+	margin-left: 15vh;
+	margin-right: 0px;
+	margin-top: 10px;
+	font-size: 9pt;
+	font-family: 'IBM Plex Serif', serif;
+	line-height: 18px;
+}
+
+/*right svg*/
+ 
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-size: 15px;
+      }
+
+      .cls-2, .cls-3 {
+        font-family: Inconsolata-Regular, Inconsolata;
+      }
+
+      .cls-3 {
+        font-size: 18px;
+      }
+
+      .cls-4 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }

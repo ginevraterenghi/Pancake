@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Pancake [sth] vtr</title>
+
+	<!-- fav icon link -->
+	<link rel="shortcut icon" type="image/png" href="assets/fav.png" />
+
+	<!-- fonts link -->
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+	<!-- Your CSS -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+
+<body>
+
+	<!----------------- up ---------------->
+
+	<container>
+		<div id="up">
+			<div class="container-fluid box1">
+				<div class="row">
+
+					<div class="col-sm box2">
+						<div class="name"> pancake </div>
+						<div class="row">
+							<div class="subname"> [sth] vtr </div>
+							<!--link to rules page html-->
+							<a href="rules.html" class="rules">/rules</a>
+
+						</div>
+
+					</div>
+
+					<div class="col-sm box2">
+						<div class="label"> Dataset </div>
+						<div class="subtitle"> CSE_20180215_data_info_xlsx </div>
+					</div>
+
+					<div class="col-sm box2">
+						<div class="label"> Brand </div>
+						<div class="subtitle">Dove</div>
+					</div>
+
+					<div class="col-sm box2">
+						<div class="label">Area</div>
+						<div class="subtitle">Cosmetics</div>
+					</div>
+
+					<div class="col-sm box2">
+						<div class="label">Model</div>
+						<div class="subtitle">Logistic Regression Classifier <br>Word Embedding</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</container>
+
+
+	<!----------------- middle ---------------->
+
+	<container>
+		<div id="middle">
+			<div class="container-fluid">
+				<div class="row">
+
+					<div class="col-4 squareKey">
+						<div class="preList">
+							<div class="spiegazione"> [Key-words] = most influencial words
+							</div>
+						</div>
+
+						<div class="keyFrame">
+							<!-- Box for words -->
+							<ul class="listSliderKeyword">
+								<li>
+									<!-- 1 -->
+									<div class="containerSliderKeyword">
+										<span class="sliderLeft"></span>
+										<span class="keywordRight">
+											</span>
+									</div>
+								</li>
+								<li>
+									<!-- 2 -->
+									<div class="containerSliderKeyword">
+										<span class="sliderLeft"></span>
+										<span class="keywordRight">
+											</span>
+									</div>
+								</li>
+								<li>
+									<!-- 3 -->
+									<div class="containerSliderKeyword">
+										<span class="sliderLeft"></span>
+										<span class="keywordRight">
+											</span>
+									</div>
+								</li>
+								<li>
+									<!-- 4 -->
+									<div class="containerSliderKeyword">
+										<span class="sliderLeft"></span>
+										<span class="keywordRight">
+											</span>
+									</div>
+								</li>
+								<li>
+									<!-- 5 -->
+									<div class="containerSliderKeyword">
+										<span class="sliderLeft"></span>
+										<span class="keywordRight">
+											</span>
+									</div>
+								</li>
+								<li>
+									<!-- 6 -->
+									<div class="containerSliderKeyword">
+										<span class="sliderLeft"></span>
+										<span class="keywordRight">
+											</span>
+									</div>
+								</li>
+								<li>
+									<!-- 7 -->
+									<div class="containerSliderKeyword">
+										<span class="sliderLeft"></span>
+										<span class="keywordRight">
+											</span>
+									</div>
+								</li>
+								<li>
+									<!-- 8 -->
+									<div class="containerSliderKeyword">
+										<span class="sliderLeft"></span>
+										<span class="keywordRight">
+											</span>
+									</div>
+								</li>
+								<li>
+									<!-- 9 -->
+									<div class="containerSliderKeyword">
+										<span class="sliderLeft"></span>
+										<span class="keywordRight">
+											</span>
+									</div>
+								</li>
+								<li>
+									<!-- 10 -->
+									<div class="containerSliderKeyword">
+										<span class="sliderLeft"></span>
+										<span class="keywordRight">
+											</span>
+									</div>
+								</li>
+								<li>
+									<!-- extra for search bar -->
+									<div class="containerSliderKeyword">
+										<span class="sliderLeft"></span>
+										<span class="keywordRight">
+											<input type="text" id="search_input" onkeyup="search_word()" placeholder="Search for words...">
+                                        </span>
+									</div>
+								</li>
+							</ul>
+
+						</div>
+
+					</div>
+
+
+					<div class="col-6 squareScatter">
+					</div>
+
+
+					<div class="col-2 squareList">
+
+						<div class="preList">
+							<div class="spiegazione">[Finder] : words alphabetically ordered
+							</div>
+						</div>
+
+						<div class="listFrame">
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</container>
+
+
+
+	<!----------------- bottom ---------------->
+
+	<container>
+		<div id="bottom">
+			<div class="container-fluid">
+				<div class="row">
+
+					<div class="col-12 squareLine">
+						
+						<div class="deselect">
+							 [View all]
+						</div>
+
+						<div class="riqLine">
+
+							<div class="scatterOrizzontale">
+							</div>
+
+							<div class="col-12 print">
+								<div class="row">
+
+									<div class="textFix">Word selected:
+									</div>
+									<div class="printWord">
+									</div>
+									<div class="textFix">Similarity value:
+									</div>
+									<div class="printSimilarity">
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+
+	</container>
+
+
+	<!--Load d3 v5-->
+	<script src="http://d3js.org/d3.v5.min.js"></script>
+
+	<!--d3 per array-->
+	<script src="https://d3js.org/d3-array.v1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+	<!--Load js pages-->
+	<script src="js/key-list.js"></script>
+	<script src="js/scatterPlot.js"></script>
+	<script src="js/word-list.js"></script>
+	<script src="js/circle.js"></script>
+	<script src="js/plotLine.js"></script>
+	<script src="js/slider.js"></script>
+	<script src="js/func_for_one_line_plot.js"></script>
+	<script src="js/read_dataset.js"></script>
+
+	<!--search function-->
+	<script>
+		function search_word() {
+			var input, filter, ul, li, a, i;
+			input = document.getElementById("search_input");
+			filter = input.value.toLowerCase();
+			ul = document.getElementById("ul_word_list");
+			li = ul.getElementsByTagName("li");
+			for (i = 0; i < li.length; i++) {
+				a = li[i].getElementsByTagName("a")[0];
+				if (a.innerHTML.toLowerCase().indexOf(filter) > -1) {
+					li[i].style.display = "";
+				} else {
+					li[i].style.display = "none";
+				}
+			}
+
+			idx = all_dataset_words.indexOf(filter);
+
+			//var all_dataset_words = [];
+			//var all_x_coordinates = [];
+			//var all_y_coordinates = [];
+
+			if (idx != -1) {
+
+				// Word was found -> activate slider
+				d3.selectAll(".keyWord")
+					.style('opacity', 0.3);
+
+				d3.selectAll(".svgSlider")
+					.selectAll('*')
+					.style('pointer-events', "none");
+
+				d3.selectAll(".svgSlider")
+					.filter("#searched_word_slider")
+					.selectAll('*')
+					.style('pointer-events', "auto");
+
+				d3.selectAll(".selectedDot")
+					.attr('class', "dot hidden"); // Hide all the points
+
+				//	select key-word dot
+				d3.selectAll('.dot')
+					.attr('class', "dot hidden") // Hide all the points
+					.filter("#" + filter)
+					.attr("class", "selectedDot");
+
+				//	slideBar appear
+				d3.selectAll(".svgSlider")
+					.attr('class', "svgSlider hidden")
+					.filter("#searched_word_slider")
+					.attr("class", "svgSlider")
+					.style('opacity', 1);
+
+				//	[view all] opacity
+				d3.selectAll(".deselect")
+					.style('opacity', 0.3);
+
+				//	circle selection takes key-word x and y value 
+				d3.select("#similarityCircle")
+					.style('opacity', 0.7)
+					.attr("cx", xScale(parseFloat(all_x_coordinates[idx])))
+					.attr("cy", yScale(parseFloat(all_y_coordinates[idx])));
+
+				d3.csv("../data/dataset.csv").then(function(data) {
+					d_obj = data[idx];
+
+					//	show dots inside circle selection
+					d3.selectAll('.dot')
+						.filter(function(d) {
+							return euclidean_distance(circle, d) <= circle.attr("r")
+						})
+						.attr("class", "dot");
+
+					//	key-word dot selected class
+					d3.selectAll('.dot')
+						.filter("#" + filter)
+						.attr("class", "dot selectedDot");
+
+					// data to adapt to dataset*
+					word_obj = get_selected_word_features(d_obj, data.columns.slice(4, 103), data.columns.slice(103, 202), data.columns.slice(202, 301));
+
+					color_circles_based_on_deltas(word_obj);
+
+					// rectangles plotted on line plot from key-word selected
+					show_one_line_plot_from_word(word_obj);
+					if (handle_pos == 1) {
+						// grazie ale
+						adapt_line_plot(1, 0.8999999999999999);
+					};
+				});
+			};
+		};
+
+	</script>
+
+</body>
+
+</html>
