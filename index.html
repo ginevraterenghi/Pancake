@@ -332,7 +332,7 @@
 					.attr("cx", xScale(parseFloat(all_x_coordinates[idx])))
 					.attr("cy", yScale(parseFloat(all_y_coordinates[idx])));
 
-				d3.csv("../data/dataset.csv").then(function(data) {
+				d3.csv("data/dataset.csv").then(function(data) {
 					d_obj = data[idx];
 
 					//	show dots inside circle selection
