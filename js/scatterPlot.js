@@ -34,7 +34,7 @@ var tooltip = d3.select("body").append("div")
 	.style("opacity", 0);
 
 // load data
-d3.csv("../data/dataset.csv").then(function (data) {
+d3.csv("./data/dataset.csv").then(function (data) {
 
 	// change string (from CSV) into number format
 	data.forEach(function (d) {
